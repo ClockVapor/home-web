@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Nick's Apartment Website</title>
+		<link rel="stylesheet" type="text/css" href="base.css">
 		<link rel="stylesheet" type="text/css" href="nav.css">
 	</head>
 	<body>
