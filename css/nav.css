@@ -1,0 +1,23 @@
+div.nav ul {
+	float: left;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	padding-right: 16px;
+}
+
+div.nav li {
+	display: block;
+	padding: 8px;
+	background-color: #dddddd;
+}
+
+div.nav li:hover {
+	background-color: #bbbbbb;
+}
+
+div.nav li a {
+	display: block;
+	color: blue;
+	text-decoration: none;
+}

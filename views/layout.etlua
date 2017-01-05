@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Nick's Apartment Website</title>
+		<link rel="stylesheet" type="text/css" href="nav.css">
+	</head>
+	<body>
+		<% render("views.nav") %>
+		<% content_for("inner") %>
+	</body>
+</html>
