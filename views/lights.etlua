@@ -1,4 +1,10 @@
 <div class="page">
 	<h>Light Management</h>
+	<p>
+		<form method="post">
+			<input class="jscolor" name="color">
+			<input type="submit" value="Apply">
+		</form>
+	</p>
 </div>
 

@@ -1,4 +1,7 @@
 local lapis = require("lapis")
+local socket = require("socket")
+local respond_to
+respond_to = require("lapis.application").respond_to
 do
   local _class_0
   local _parent_0 = lapis.Application
@@ -13,11 +16,23 @@ do
     end,
     [{
       lights = "/lights"
-    }] = function(self)
-      return {
-        render = true
-      }
-    end
+    }] = respond_to({
+      GET = function(self)
+        return {
+          render = true
+        }
+      end,
+      POST = function(self)
+        local tcp = socket.connect("127.0.0.1", 666)
+        if tcp then
+          tcp:send(self.params.color .. "\n")
+          tcp:close()
+        end
+        return {
+          render = true
+        }
+      end
+    })
   }
   _base_0.__index = _base_0
   setmetatable(_base_0, _parent_0.__base)
