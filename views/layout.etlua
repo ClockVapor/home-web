@@ -1,14 +1,15 @@
 <!DOCTYPE HTML>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Nick's Apartment Website</title>
-		<link rel="stylesheet" type="text/css" href="base.css">
-		<link rel="stylesheet" type="text/css" href="nav.css">
-		<script src="jscolor.js"></script>
-	</head>
-	<body>
-		<% render("views.nav") %>
-		<% content_for("inner") %>
-	</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>Home Website</title>
+    <link rel="stylesheet" type="text/css" href="base.css">
+    <link rel="stylesheet" type="text/css" href="nav.css">
+    <script src="jscolor.js"></script>
+  </head>
+  <body>
+    <% render("views.nav") %>
+    <% content_for("inner") %>
+  </body>
 </html>

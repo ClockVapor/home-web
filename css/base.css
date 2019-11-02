@@ -1,5 +1,10 @@
 h {
-	color: blue;
-	font-size: 32px;
-	text-decoration: underline;
+  color: blue;
+  font-size: 32px;
+  text-decoration: underline;
+}
+
+input[type="submit"] {
+  width: 5em;
+  height: 5em;
 }

@@ -41,4 +41,6 @@ luac.out
 
 logs
 nginx.conf.compiled
-
+*.swp
+*.lua
+lights.yml
