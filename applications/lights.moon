@@ -11,16 +11,18 @@ loadLights = ->
   f\close!
   lights
 
-parseSelectedLightIps = (request) ->
-  indices = map(getKeys(request.params.selectedLights or {}), tonumber)
+lights = loadLights! -- load on startup
+
+parseSelectedLightIps = (params) ->
+  indices = map(getKeys(params.selectedLights or {}), tonumber)
   map(
-    filterWithIndex(request.lights, (i, v) -> contains(indices, i)),
+    filterWithIndex(lights, (i, v) -> contains(indices, i)),
     (it) -> it.ip
   )
 
 class LightsApplication extends lapis.Application
   @before_filter =>
-    @lights = loadLights!
+    @lights = lights
 
   [lights: "/lights"]: respond_to {
     GET: =>
@@ -31,7 +33,7 @@ class LightsApplication extends lapis.Application
       @session.lightColor = @params.color
       @session.transitionMs = @params.transitionMs
 
-      selectedLightIps = parseSelectedLightIps(@)
+      selectedLightIps = parseSelectedLightIps(@params)
       switch @params.action
         when "On"
           lifx.on(selectedLightIps, @params.transitionMs or 0)
