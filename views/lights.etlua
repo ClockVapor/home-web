@@ -2,7 +2,7 @@
   <h>Light Management</h>
   <form method="post">
     <p>
-      <% for i, light in ipairs(app.lights) do %>
+      <% for i, light in ipairs(lights) do %>
         <input type="checkbox" id="light<%= i %>" name="selectedLights[<%= i %>]" value="<%= i %>"
           <% if session.selectedLights and session.selectedLights[tostring(i)] then %>
             checked
