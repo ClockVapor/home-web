@@ -30,9 +30,9 @@ colorStrToHexStr = (s) ->
   r, g, b = colors.hsl_to_rgb(c.H, c.S, c.L)
   cMax = math.max(r, g, b)
   cMin = math.min(r, g, b)
-  hueHexStr = intToHexStrLittleEndian(math.floor(c.H / 360 * 65535), 4)
-  saturationHexStr = intToHexStrLittleEndian(math.floor((if cMax == 0 then 0 else (cMax - cMin) / cMax) * 65535), 4)
-  lightnessHexStr = intToHexStrLittleEndian(math.floor(cMax * 65535), 4)
+  hueHexStr = intToHexStrLittleEndian(math.ceil(c.H / 360 * 65535), 4)
+  saturationHexStr = intToHexStrLittleEndian(math.ceil((if cMax == 0 then 0 else (cMax - cMin) / cMax) * 65535), 4)
+  lightnessHexStr = intToHexStrLittleEndian(math.ceil(cMax * 65535), 4)
   hueHexStr .. saturationHexStr .. lightnessHexStr .. "AC0D"
 
 intToHexStrLittleEndian = (n, length = 8) ->
